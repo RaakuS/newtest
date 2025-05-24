@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+httpx
+mindsdb_sdk
+scholarly
+pydantic

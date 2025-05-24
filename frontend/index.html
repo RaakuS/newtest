@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Research Aggregator</title>
+  <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+function App() {
+  return (
+    <div>
+      <h1>Login</h1>
+      <a href="/auth/orcid">Login with ORCID</a><br/>
+      <a href="/auth/google_scholar">Sync Google Scholar</a><br/>
+      <a href="/auth/researchgate">Login ResearchGate</a><br/>
+    </div>
+  );
+}
+ReactDOM.render(<App />, document.getElementById('root'));
+</script>
+</body>
+</html>
