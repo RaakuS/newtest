@@ -1,0 +1,24 @@
+version: '3'
+services:
+  mindsdb:
+    image: mindsdb/mindsdb
+    container_name: mindsdb
+    networks:
+      - mnet
+  app:
+    build: .
+    container_name: fastapi-app
+    environment:
+      - ORCID_CLIENT_ID=${ORCID_CLIENT_ID}
+      - ORCID_CLIENT_SECRET=${ORCID_CLIENT_SECRET}
+      - ORCID_REDIRECT_URI=${ORCID_REDIRECT_URI}
+      - RESEARCHGATE_TOKEN=${RESEARCHGATE_TOKEN}
+      - SCHOLAR_QUERY=${SCHOLAR_QUERY}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mindsdb
+    networks:
+      - mnet
+networks:
+  mnet:
